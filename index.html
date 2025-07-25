@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Chatbot Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .status {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-online {
+            background-color: #4CAF50;
+            animation: pulse 2s infinite;
+        }
+
+        .status-offline {
+            background-color: #f44336;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .chat-container {
+            padding: 30px;
+        }
+
+        .input-section {
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        #questionInput {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        #questionInput:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 2px solid #e9ecef;
+        }
+
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .examples {
+            margin-bottom: 20px;
+        }
+
+        .examples h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .example-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .example-btn {
+            padding: 8px 15px;
+            background: #f0f8ff;
+            border: 1px solid #4facfe;
+            border-radius: 20px;
+            color: #4facfe;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .example-btn:hover {
+            background: #4facfe;
+            color: white;
+        }
+
+        .response-section {
+            margin-top: 30px;
+        }
+
+        .response-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4facfe;
+        }
+
+        .response-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .response-time {
+            background: #4facfe;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .response-content {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .error {
+            border-left-color: #f44336;
+        }
+
+        .error .response-time {
+            background: #f44336;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4facfe;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .input-group {
+                flex-direction: column;
+            }
+            
+            .example-buttons {
+                flex-direction: column;
+            }
+            
+            .response-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Database Chatbot</h1>
+            <p>Ask questions about your database in natural language</p>
+        </div>
+
+        <div class="status">
+            <span class="status-indicator status-offline" id="statusIndicator"></span>
+            <span id="statusText">Checking connection...</span>
+        </div>
+
+        <div class="chat-container">
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="questionInput" placeholder="Ask a question about your database..." />
+                    <button class="btn btn-primary" onclick="sendQuery()" id="sendBtn">
+                        Send Query
+                    </button>
+                </div>
+                
+                <div class="examples">
+                    <h3>💡 Example Questions:</h3>
+                    <div class="example-buttons">
+                        <span class="example-btn" onclick="setQuestion('What tables are available in the database?')">Show tables</span>
+                        <span class="example-btn" onclick="setQuestion('How many records are in each table?')">Count records</span>
+                        <span class="example-btn" onclick="setQuestion('Show me the structure of the users table')">Table structure</span>
+                        <span class="example-btn" onclick="setQuestion('What are the column names in the orders table?')">Column names</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Processing your query...</p>
+            </div>
+
+            <div class="response-section" id="responseSection">
+                <!-- Responses will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:5000';
+        
+        // Check API status on page load
+        window.onload = function() {
+            checkApiStatus();
+            
+            // Add Enter key support for input
+            document.getElementById('questionInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendQuery();
+                }
+            });
+        };
+
+        async function checkApiStatus() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/health`);
+                if (response.ok) {
+                    document.getElementById('statusIndicator').className = 'status-indicator status-online';
+                    document.getElementById('statusText').textContent = 'API Connected';
+                } else {
+                    throw new Error('API not responding');
+                }
+            } catch (error) {
+                document.getElementById('statusIndicator').className = 'status-indicator status-offline';
+                document.getElementById('statusText').textContent = 'API Offline - Please start the server';
+            }
+        }
+
+        function setQuestion(question) {
+            document.getElementById('questionInput').value = question;
+        }
+
+        async function sendQuery() {
+            const questionInput = document.getElementById('questionInput');
+            const question = questionInput.value.trim();
+            
+            if (!question) {
+                alert('Please enter a question');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('sendBtn').disabled = true;
+            document.getElementById('sendBtn').textContent = 'Processing...';
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/query`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: question })
+                });
+
+                const data = await response.json();
+                displayResponse(data, question);
+                
+                // Clear input
+                questionInput.value = '';
+                
+            } catch (error) {
+                displayResponse({
+                    success: false,
+                    error: 'Failed to connect to API. Make sure the server is running.',
+                    duration_seconds: 0
+                }, question);
+            } finally {
+                // Hide loading
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('sendBtn').disabled = false;
+                document.getElementById('sendBtn').textContent = 'Send Query';
+            }
+        }
+
+        function displayResponse(data, question) {
+            const responseSection = document.getElementById('responseSection');
+            
+            const responseCard = document.createElement('div');
+            responseCard.className = `response-card ${data.success ? '' : 'error'}`;
+            
+            const timestamp = new Date().toLocaleTimeString();
+            
+            responseCard.innerHTML = `
+                <div class="response-header">
+                    <strong>Q: ${question}</strong>
+                    <span class="response-time">⏱️ ${data.duration_seconds}s | ${timestamp}</span>
+                </div>
+                <div class="response-content">
+                    ${data.success ? data.answer : `❌ Error: ${data.error}`}
+                </div>
+            `;
+            
+            // Insert at the top
+            responseSection.insertBefore(responseCard, responseSection.firstChild);
+        }
+
+        // Refresh API status every 30 seconds
+        setInterval(checkApiStatus, 30000);
+    </script>
+</body>
+</html>
