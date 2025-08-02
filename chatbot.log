@@ -1,0 +1,185 @@
+2025-07-30 02:24:17,076 - __main__ - INFO - Loading environment variables...
+2025-07-30 02:24:17,077 - __main__ - INFO - Environment variables loaded successfully
+2025-07-30 02:24:17,079 - __main__ - INFO - Starting database connection process...
+2025-07-30 02:24:17,079 - __main__ - INFO - Database URI loaded: postgresql://master:...
+2025-07-30 02:24:17,079 - __main__ - INFO - Attempting to connect to database...
+2025-07-30 02:24:28,077 - __main__ - INFO - Successfully connected to database: postgresql://master:FleetBloxDev@13.218.25.97:5432/fleetblox-dev
+2025-07-30 02:24:28,077 - __main__ - INFO - Database dialect: postgresql
+2025-07-30 02:24:28,078 - __main__ - INFO - Available tables: ['Contact', 'FailedPayment', 'PaymentAttempt', 'PaymentDetails', 'PaymentMethod', 'SmartCarCompatibilityMatrix', 'Subscription', 'SubscriptionsPackage', '_CarInfoTocarLocation', '_NoProtectionPlansToProtectionCoverage', '_prisma_migrations', 'additionalDriver', 'analytic_access_permission', 'automatic_unpublished', 'available_check_list_for_maintainance', 'available_checks', 'available_checks_category', 'banner', 'billHistory', 'blog', 'blog_post', 'body_damage', 'brand', 'brand_marketing_permission', 'brand_valet', 'business_designation_permissions', 'campaign', 'campaign_daily_clicks', 'campaign_daily_impression', 'campaign_daily_sent', 'campaign_history', 'carLocation', 'car_budget', 'car_expense', 'car_gallery', 'car_info', 'car_info_from_vin', 'car_info_from_vin_image', 'car_logs', 'car_storage_doc_usage', 'car_token', 'catalogue', 'check_sended', 'check_sended_category', 'compliances_budget', 'connected_car', 'contact_person', 'contacts', 'contract_notification_preferences', 'conversation', 'country', 'cusotmer_brand_catalogue', 'customer_car_history', 'customer_car_info', 'customer_feedback', 'customer_profile', 'customer_purchase_car', 'customer_user_and_brand', 'default_inspection_category', 'departed_log', 'designation', 'digital_fleet_management_permission', 'documents_access_permission', 'driver_plans', 'driver_plans_purchase', 'dummyModelForTest', 'employee', 'employee_access_permission', 'entry_inspection', 'exchange', 'exchange_history', 'exchange_offer', 'exchange_offer_cars', 'expense_schedule', 'expenses_access_permission', 'extra_package', 'extras', 'extras_purchase', 'faq_questions', 'faq_section', 'fees_and_deposit', 'financial_notification_preferences', 'firebase_tokens', 'fleet_alert', 'fleet_designation_permissions', 'fuel_budget', 'gallery_image', 'general_inspection', 'general_settings', 'handover', 'handover_and_return', 'handover_and_return_purchase', 'handover_history', 'handover_purchase', 'header_section', 'home_page', 'inspection_category_checklist', 'inspection_report', 'insurance_details', 'interestUser', 'location', 'location_city', 'location_dynamic_pricing', 'maintanainance_history', 'maintenance_access_permission', 'maintenance_alert', 'maintenance_budget', 'maintenance_suggestions', 'manage_dynamic_pricing', 'message', 'my_fleet_notification_preferences', 'newLetter', 'no_protection_plans', 'notification', 'notification_preferences', 'notification_settings', 'other_budgets', 'other_documents_for_car', 'others', 'otp', 'pages', 'paid_user_info', 'partial_save_model_for_passport_or_lisence_verification', 'plan', 'policies', 'policy', 'protection_coverage', 'protection_coverage_purchase', 'protection_package', 'protection_package_purchase', 'protection_plan', 'purchase_plan', 'recently_completed_maintenance', 'registration_details', 'regular_repair_check', 'relocations', 'reminder', 'reminder_access_permission', 'repair_damage', 'request_exchange', 'request_handover', 'request_maintanainance', 'request_maintanainance_report', 'return', 'return_history', 'return_log', 'return_purchase', 'return_request', 'search_engine_preview', 'service_points', 'sign_agreement', 'smartCarLogs', 'social_link_brand', 'social_media', 'subscription_package', 'subscription_package_purchase', 'subscription_plan', 'system_guide', 'task', 'task_access_permission', 'task_inspection_category', 'task_step', 'task_vehicle_performance_check_category', 'terms_and_policy', 'tire_pressure', 'token', 'total_driven', 'total_extra_mileage', 'trip_access_permission', 'unpublished_details', 'upcomming_subscription', 'user', 'user_lisence', 'user_passport', 'vehicle', 'vehicle_access_permission', 'vehicle_document_alerts', 'vehicle_draft', 'vehicle_performance_check_category', 'vehicle_performance_check_category_question', 'vehicle_setting', 'verification_settings', 'verification_settings_questions', 'website']
+2025-07-30 02:24:28,079 - __main__ - INFO - Initializing language model...
+2025-07-30 02:24:28,080 - __main__ - INFO - DeepSeek API key loaded: Yes
+2025-07-30 02:24:29,047 - __main__ - INFO - Language model initialized successfully: deepseek-chat
+2025-07-30 02:24:29,048 - __main__ - INFO - Initializing enhanced tools...
+2025-07-30 02:24:29,048 - __main__ - INFO - Creating embeddings for proper noun retrieval...
+2025-07-30 02:24:29,067 - __main__ - INFO - Embeddings created successfully
+2025-07-30 02:24:29,068 - __main__ - INFO - Extracting proper nouns from database...
+2025-07-30 02:24:29,995 - __main__ - ERROR - Error in query_as_list: (psycopg2.errors.UndefinedTable) relation "artist" does not exist
+LINE 1: SELECT DISTINCT Name FROM Artist LIMIT 100
+                                  ^
+
+[SQL: SELECT DISTINCT Name FROM Artist LIMIT 100]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-30 02:24:29,995 - __main__ - INFO - Found 0 artists
+2025-07-30 02:24:30,925 - __main__ - ERROR - Error in query_as_list: (psycopg2.errors.UndefinedTable) relation "album" does not exist
+LINE 1: SELECT DISTINCT Title FROM Album LIMIT 100
+                                   ^
+
+[SQL: SELECT DISTINCT Title FROM Album LIMIT 100]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-30 02:24:30,926 - __main__ - INFO - Found 0 albums
+2025-07-30 02:24:30,927 - __main__ - INFO - Total proper nouns collected: 0
+2025-07-30 02:24:30,927 - __main__ - WARNING - No proper nouns found, retriever tool disabled
+2025-07-30 02:24:30,928 - __main__ - INFO - Creating SQL agent with enhanced tools...
+2025-07-30 02:24:30,929 - __main__ - INFO - Base SQL tools loaded: 4 tools
+2025-07-30 02:24:30,930 - __main__ - INFO - Proper noun retriever tool not available
+2025-07-30 02:24:30,930 - __main__ - INFO - Creating enhanced ReAct agent...
+2025-07-30 02:24:30,943 - __main__ - INFO - Enhanced agent created successfully
+2025-07-30 02:24:30,944 - __main__ - INFO - Building LangGraph chain...
+2025-07-30 02:24:30,944 - __main__ - INFO - Chain graph structure created
+2025-07-30 02:24:30,949 - __main__ - INFO - Chain graph compiled with memory support
+2025-07-30 02:24:30,966 - werkzeug - INFO -  * Restarting with stat
+2025-07-30 02:24:34,334 - __main__ - INFO - Loading environment variables...
+2025-07-30 02:24:34,335 - __main__ - INFO - Environment variables loaded successfully
+2025-07-30 02:24:34,337 - __main__ - INFO - Starting database connection process...
+2025-07-30 02:24:34,337 - __main__ - INFO - Database URI loaded: postgresql://master:...
+2025-07-30 02:24:34,338 - __main__ - INFO - Attempting to connect to database...
+2025-07-30 02:24:45,664 - __main__ - INFO - Successfully connected to database: postgresql://master:FleetBloxDev@13.218.25.97:5432/fleetblox-dev
+2025-07-30 02:24:45,664 - __main__ - INFO - Database dialect: postgresql
+2025-07-30 02:24:45,665 - __main__ - INFO - Available tables: ['Contact', 'FailedPayment', 'PaymentAttempt', 'PaymentDetails', 'PaymentMethod', 'SmartCarCompatibilityMatrix', 'Subscription', 'SubscriptionsPackage', '_CarInfoTocarLocation', '_NoProtectionPlansToProtectionCoverage', '_prisma_migrations', 'additionalDriver', 'analytic_access_permission', 'automatic_unpublished', 'available_check_list_for_maintainance', 'available_checks', 'available_checks_category', 'banner', 'billHistory', 'blog', 'blog_post', 'body_damage', 'brand', 'brand_marketing_permission', 'brand_valet', 'business_designation_permissions', 'campaign', 'campaign_daily_clicks', 'campaign_daily_impression', 'campaign_daily_sent', 'campaign_history', 'carLocation', 'car_budget', 'car_expense', 'car_gallery', 'car_info', 'car_info_from_vin', 'car_info_from_vin_image', 'car_logs', 'car_storage_doc_usage', 'car_token', 'catalogue', 'check_sended', 'check_sended_category', 'compliances_budget', 'connected_car', 'contact_person', 'contacts', 'contract_notification_preferences', 'conversation', 'country', 'cusotmer_brand_catalogue', 'customer_car_history', 'customer_car_info', 'customer_feedback', 'customer_profile', 'customer_purchase_car', 'customer_user_and_brand', 'default_inspection_category', 'departed_log', 'designation', 'digital_fleet_management_permission', 'documents_access_permission', 'driver_plans', 'driver_plans_purchase', 'dummyModelForTest', 'employee', 'employee_access_permission', 'entry_inspection', 'exchange', 'exchange_history', 'exchange_offer', 'exchange_offer_cars', 'expense_schedule', 'expenses_access_permission', 'extra_package', 'extras', 'extras_purchase', 'faq_questions', 'faq_section', 'fees_and_deposit', 'financial_notification_preferences', 'firebase_tokens', 'fleet_alert', 'fleet_designation_permissions', 'fuel_budget', 'gallery_image', 'general_inspection', 'general_settings', 'handover', 'handover_and_return', 'handover_and_return_purchase', 'handover_history', 'handover_purchase', 'header_section', 'home_page', 'inspection_category_checklist', 'inspection_report', 'insurance_details', 'interestUser', 'location', 'location_city', 'location_dynamic_pricing', 'maintanainance_history', 'maintenance_access_permission', 'maintenance_alert', 'maintenance_budget', 'maintenance_suggestions', 'manage_dynamic_pricing', 'message', 'my_fleet_notification_preferences', 'newLetter', 'no_protection_plans', 'notification', 'notification_preferences', 'notification_settings', 'other_budgets', 'other_documents_for_car', 'others', 'otp', 'pages', 'paid_user_info', 'partial_save_model_for_passport_or_lisence_verification', 'plan', 'policies', 'policy', 'protection_coverage', 'protection_coverage_purchase', 'protection_package', 'protection_package_purchase', 'protection_plan', 'purchase_plan', 'recently_completed_maintenance', 'registration_details', 'regular_repair_check', 'relocations', 'reminder', 'reminder_access_permission', 'repair_damage', 'request_exchange', 'request_handover', 'request_maintanainance', 'request_maintanainance_report', 'return', 'return_history', 'return_log', 'return_purchase', 'return_request', 'search_engine_preview', 'service_points', 'sign_agreement', 'smartCarLogs', 'social_link_brand', 'social_media', 'subscription_package', 'subscription_package_purchase', 'subscription_plan', 'system_guide', 'task', 'task_access_permission', 'task_inspection_category', 'task_step', 'task_vehicle_performance_check_category', 'terms_and_policy', 'tire_pressure', 'token', 'total_driven', 'total_extra_mileage', 'trip_access_permission', 'unpublished_details', 'upcomming_subscription', 'user', 'user_lisence', 'user_passport', 'vehicle', 'vehicle_access_permission', 'vehicle_document_alerts', 'vehicle_draft', 'vehicle_performance_check_category', 'vehicle_performance_check_category_question', 'vehicle_setting', 'verification_settings', 'verification_settings_questions', 'website']
+2025-07-30 02:24:45,666 - __main__ - INFO - Initializing language model...
+2025-07-30 02:24:45,666 - __main__ - INFO - DeepSeek API key loaded: Yes
+2025-07-30 02:24:46,443 - __main__ - INFO - Language model initialized successfully: deepseek-chat
+2025-07-30 02:24:46,444 - __main__ - INFO - Initializing enhanced tools...
+2025-07-30 02:24:46,444 - __main__ - INFO - Creating embeddings for proper noun retrieval...
+2025-07-30 02:24:46,480 - __main__ - INFO - Embeddings created successfully
+2025-07-30 02:24:46,480 - __main__ - INFO - Extracting proper nouns from database...
+2025-07-30 02:24:47,421 - __main__ - ERROR - Error in query_as_list: (psycopg2.errors.UndefinedTable) relation "artist" does not exist
+LINE 1: SELECT DISTINCT Name FROM Artist LIMIT 100
+                                  ^
+
+[SQL: SELECT DISTINCT Name FROM Artist LIMIT 100]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-30 02:24:47,422 - __main__ - INFO - Found 0 artists
+2025-07-30 02:24:48,373 - __main__ - ERROR - Error in query_as_list: (psycopg2.errors.UndefinedTable) relation "album" does not exist
+LINE 1: SELECT DISTINCT Title FROM Album LIMIT 100
+                                   ^
+
+[SQL: SELECT DISTINCT Title FROM Album LIMIT 100]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-30 02:24:48,374 - __main__ - INFO - Found 0 albums
+2025-07-30 02:24:48,374 - __main__ - INFO - Total proper nouns collected: 0
+2025-07-30 02:24:48,374 - __main__ - WARNING - No proper nouns found, retriever tool disabled
+2025-07-30 02:24:48,375 - __main__ - INFO - Creating SQL agent with enhanced tools...
+2025-07-30 02:24:48,375 - __main__ - INFO - Base SQL tools loaded: 4 tools
+2025-07-30 02:24:48,376 - __main__ - INFO - Proper noun retriever tool not available
+2025-07-30 02:24:48,376 - __main__ - INFO - Creating enhanced ReAct agent...
+2025-07-30 02:24:48,388 - __main__ - INFO - Enhanced agent created successfully
+2025-07-30 02:24:48,388 - __main__ - INFO - Building LangGraph chain...
+2025-07-30 02:24:48,389 - __main__ - INFO - Chain graph structure created
+2025-07-30 02:24:48,396 - __main__ - INFO - Chain graph compiled with memory support
+2025-07-30 02:24:48,411 - werkzeug - WARNING -  * Debugger is active!
+2025-07-30 02:24:48,413 - werkzeug - INFO -  * Debugger PIN: 101-803-638
+2025-07-30 02:24:49,111 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-30 02:24:49,111 - werkzeug - INFO -  * Running on http://192.168.1.96:5000/ (Press CTRL+C to quit)
+2025-07-30 02:24:49,228 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:24:49,229 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:24:49] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:24:54,431 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:24:54,432 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:24:54] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:25:25,201 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:25:25,201 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:25:25] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:25:49,789 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:25:49] "OPTIONS /query HTTP/1.1" 200 -
+2025-07-30 02:25:50,097 - __main__ - INFO - Query endpoint accessed
+2025-07-30 02:25:50,098 - __main__ - INFO - Processing question: 'user id 20 total payment' in agent mode
+2025-07-30 02:25:50,808 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:25:54,706 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:25:54,890 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:25:54,891 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:25:54] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:26:01,498 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:26:07,424 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:26:14,741 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:26:19,569 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:26:19] "POST /query HTTP/1.1" 200 -
+2025-07-30 02:26:24,750 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:26:24,751 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:26:24] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:26:43,974 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:26:43] "OPTIONS /query HTTP/1.1" 200 -
+2025-07-30 02:26:44,287 - __main__ - INFO - Query endpoint accessed
+2025-07-30 02:26:44,325 - __main__ - INFO - Processing question: 'user id 20 current subscription' in agent mode
+2025-07-30 02:26:44,698 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:26:48,645 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:26:54,896 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:26:54,897 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:26:54] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:26:55,408 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:27:01,633 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:27:08,186 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:27:14,812 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:27:18,973 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:27:18] "POST /query HTTP/1.1" 200 -
+2025-07-30 02:27:25,202 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:27:25,202 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:27:25] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:27:54,889 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:27:54,890 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:27:54] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:28:25,211 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:28:25,212 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:28:25] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:28:54,883 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:28:54,884 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:28:54] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:28:59,264 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\OneDrive\\Desktop\\Chatbot\\python.py', reloading
+2025-07-30 02:29:01,682 - werkzeug - INFO -  * Restarting with stat
+2025-07-30 02:29:05,378 - __main__ - INFO - Loading environment variables...
+2025-07-30 02:29:05,379 - __main__ - INFO - Environment variables loaded successfully
+2025-07-30 02:29:05,381 - __main__ - INFO - Starting database connection process...
+2025-07-30 02:29:05,381 - __main__ - INFO - Database URI loaded: postgresql://master:...
+2025-07-30 02:29:05,381 - __main__ - INFO - Attempting to connect to database...
+2025-07-30 02:29:16,486 - __main__ - INFO - Successfully connected to database: postgresql://master:FleetBloxDev@13.218.25.97:5432/fleetblox-dev
+2025-07-30 02:29:16,486 - __main__ - INFO - Database dialect: postgresql
+2025-07-30 02:29:16,487 - __main__ - INFO - Available tables: ['Contact', 'FailedPayment', 'PaymentAttempt', 'PaymentDetails', 'PaymentMethod', 'SmartCarCompatibilityMatrix', 'Subscription', 'SubscriptionsPackage', '_CarInfoTocarLocation', '_NoProtectionPlansToProtectionCoverage', '_prisma_migrations', 'additionalDriver', 'analytic_access_permission', 'automatic_unpublished', 'available_check_list_for_maintainance', 'available_checks', 'available_checks_category', 'banner', 'billHistory', 'blog', 'blog_post', 'body_damage', 'brand', 'brand_marketing_permission', 'brand_valet', 'business_designation_permissions', 'campaign', 'campaign_daily_clicks', 'campaign_daily_impression', 'campaign_daily_sent', 'campaign_history', 'carLocation', 'car_budget', 'car_expense', 'car_gallery', 'car_info', 'car_info_from_vin', 'car_info_from_vin_image', 'car_logs', 'car_storage_doc_usage', 'car_token', 'catalogue', 'check_sended', 'check_sended_category', 'compliances_budget', 'connected_car', 'contact_person', 'contacts', 'contract_notification_preferences', 'conversation', 'country', 'cusotmer_brand_catalogue', 'customer_car_history', 'customer_car_info', 'customer_feedback', 'customer_profile', 'customer_purchase_car', 'customer_user_and_brand', 'default_inspection_category', 'departed_log', 'designation', 'digital_fleet_management_permission', 'documents_access_permission', 'driver_plans', 'driver_plans_purchase', 'dummyModelForTest', 'employee', 'employee_access_permission', 'entry_inspection', 'exchange', 'exchange_history', 'exchange_offer', 'exchange_offer_cars', 'expense_schedule', 'expenses_access_permission', 'extra_package', 'extras', 'extras_purchase', 'faq_questions', 'faq_section', 'fees_and_deposit', 'financial_notification_preferences', 'firebase_tokens', 'fleet_alert', 'fleet_designation_permissions', 'fuel_budget', 'gallery_image', 'general_inspection', 'general_settings', 'handover', 'handover_and_return', 'handover_and_return_purchase', 'handover_history', 'handover_purchase', 'header_section', 'home_page', 'inspection_category_checklist', 'inspection_report', 'insurance_details', 'interestUser', 'location', 'location_city', 'location_dynamic_pricing', 'maintanainance_history', 'maintenance_access_permission', 'maintenance_alert', 'maintenance_budget', 'maintenance_suggestions', 'manage_dynamic_pricing', 'message', 'my_fleet_notification_preferences', 'newLetter', 'no_protection_plans', 'notification', 'notification_preferences', 'notification_settings', 'other_budgets', 'other_documents_for_car', 'others', 'otp', 'pages', 'paid_user_info', 'partial_save_model_for_passport_or_lisence_verification', 'plan', 'policies', 'policy', 'protection_coverage', 'protection_coverage_purchase', 'protection_package', 'protection_package_purchase', 'protection_plan', 'purchase_plan', 'recently_completed_maintenance', 'registration_details', 'regular_repair_check', 'relocations', 'reminder', 'reminder_access_permission', 'repair_damage', 'request_exchange', 'request_handover', 'request_maintanainance', 'request_maintanainance_report', 'return', 'return_history', 'return_log', 'return_purchase', 'return_request', 'search_engine_preview', 'service_points', 'sign_agreement', 'smartCarLogs', 'social_link_brand', 'social_media', 'subscription_package', 'subscription_package_purchase', 'subscription_plan', 'system_guide', 'task', 'task_access_permission', 'task_inspection_category', 'task_step', 'task_vehicle_performance_check_category', 'terms_and_policy', 'tire_pressure', 'token', 'total_driven', 'total_extra_mileage', 'trip_access_permission', 'unpublished_details', 'upcomming_subscription', 'user', 'user_lisence', 'user_passport', 'vehicle', 'vehicle_access_permission', 'vehicle_document_alerts', 'vehicle_draft', 'vehicle_performance_check_category', 'vehicle_performance_check_category_question', 'vehicle_setting', 'verification_settings', 'verification_settings_questions', 'website']
+2025-07-30 02:29:16,488 - __main__ - INFO - Initializing language model...
+2025-07-30 02:29:16,489 - __main__ - INFO - DeepSeek API key loaded: Yes
+2025-07-30 02:29:17,943 - __main__ - INFO - Language model initialized successfully: deepseek-chat
+2025-07-30 02:29:17,944 - __main__ - INFO - Initializing enhanced tools...
+2025-07-30 02:29:17,944 - __main__ - INFO - Creating embeddings for proper noun retrieval...
+2025-07-30 02:29:17,977 - __main__ - INFO - Embeddings created successfully
+2025-07-30 02:29:17,978 - __main__ - INFO - Extracting proper nouns from database...
+2025-07-30 02:29:18,955 - __main__ - ERROR - Error in query_as_list: (psycopg2.errors.UndefinedTable) relation "artist" does not exist
+LINE 1: SELECT DISTINCT Name FROM Artist LIMIT 100
+                                  ^
+
+[SQL: SELECT DISTINCT Name FROM Artist LIMIT 100]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-30 02:29:18,956 - __main__ - INFO - Found 0 artists
+2025-07-30 02:29:19,907 - __main__ - ERROR - Error in query_as_list: (psycopg2.errors.UndefinedTable) relation "album" does not exist
+LINE 1: SELECT DISTINCT Title FROM Album LIMIT 100
+                                   ^
+
+[SQL: SELECT DISTINCT Title FROM Album LIMIT 100]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-30 02:29:19,908 - __main__ - INFO - Found 0 albums
+2025-07-30 02:29:19,908 - __main__ - INFO - Total proper nouns collected: 0
+2025-07-30 02:29:19,908 - __main__ - WARNING - No proper nouns found, retriever tool disabled
+2025-07-30 02:29:19,909 - __main__ - INFO - Creating SQL agent with enhanced tools...
+2025-07-30 02:29:19,909 - __main__ - INFO - Base SQL tools loaded: 4 tools
+2025-07-30 02:29:19,909 - __main__ - INFO - Proper noun retriever tool not available
+2025-07-30 02:29:19,910 - __main__ - INFO - Creating enhanced ReAct agent...
+2025-07-30 02:29:19,947 - __main__ - INFO - Enhanced agent created successfully
+2025-07-30 02:29:19,947 - __main__ - INFO - Building LangGraph chain...
+2025-07-30 02:29:19,948 - __main__ - INFO - Chain graph structure created
+2025-07-30 02:29:19,961 - __main__ - INFO - Chain graph compiled with memory support
+2025-07-30 02:29:19,979 - werkzeug - WARNING -  * Debugger is active!
+2025-07-30 02:29:19,985 - werkzeug - INFO -  * Debugger PIN: 101-803-638
+2025-07-30 02:29:21,273 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-30 02:29:21,274 - werkzeug - INFO -  * Running on http://192.168.1.96:5000/ (Press CTRL+C to quit)
+2025-07-30 02:29:32,715 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:29:32,717 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:29:32] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:30:02,409 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:30:02,412 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:30:02] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:30:06,759 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:30:06] "OPTIONS /query HTTP/1.1" 200 -
+2025-07-30 02:30:07,021 - __main__ - INFO - Query endpoint accessed
+2025-07-30 02:30:07,021 - __main__ - INFO - Processing question: 'current subscription plan of the user id 5' in agent mode
+2025-07-30 02:30:07,628 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:30:32,886 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:30:32,887 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:30:32] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:30:34,029 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:31:00,205 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-30 02:31:03,235 - __main__ - INFO - Health check endpoint accessed
+2025-07-30 02:31:03,236 - werkzeug - INFO - 127.0.0.1 - - [30/Jul/2025 02:31:03] "GET /health HTTP/1.1" 200 -
+2025-07-30 02:31:29,831 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\OneDrive\\Desktop\\Chatbot\\python.py', reloading
+2025-07-30 02:31:32,277 - werkzeug - INFO -  * Restarting with stat
