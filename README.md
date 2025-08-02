@@ -240,4 +240,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Made with ❤️ using Flask, LangChain, and DeepSeek AI**
+**Made by Soumik ❤️ using Flask, LangChain, and DeepSeek AI**
